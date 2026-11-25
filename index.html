@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WIKI HYPE | Ultra Core AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="hudbox" class="hud-container">
+    <header class="hud-header">
+      <div class="brand">
+        <span class="dot"></span>
+        <h1>WIKI HYPE</h1>
+        <span class="badge">ULTRA AI</span>
+      </div>
+      <div class="controls-top">
+        <span id="clock" class="clock">00:00</span>
+        <select id="langselect" title="Voice Language">
+          <option value="auto">Auto Lang</option>
+          <option value="en-IN">English (IN)</option>
+          <option value="hi-IN">Hindi / Hinglish</option>
+          <option value="bn-IN">Bangla / Assamese</option>
+          <option value="ta-IN">Tamil</option>
+          <option value="ja-JP">Japanese</option>
+          <option value="ko-KR">Korean</option>
+          <option value="zh-CN">Chinese</option>
+          <option value="es-ES">Spanish</option>
+        </select>
+        <button id="visionbtn" class="icon-btn" title="Camera Vision">👁️</button>
+        <button id="membtn" class="icon-btn" title="Memory & Contacts">🧠</button>
+        <button id="keybtn" class="icon-btn" title="Optional Groq API Key">🔑</button>
+        <button id="clearbtn" class="icon-btn" title="Clear Chat">🗑️</button>
+      </div>
+    </header>
+
+    <div id="visionbox" class="vision-box hidden">
+      <video id="camfeed" autoplay playsinline muted></video>
+      <canvas id="snapcanvas" class="hidden"></canvas>
+      <span class="vision-tag">OPTICAL VISION LIVE</span>
+    </div>
+
+    <section class="core-section">
+      <div id="reactor" class="arc-reactor" title="Tap to Speak">
+        <div class="ring outer"></div>
+        <div class="ring middle"></div>
+        <div class="ring inner"></div>
+        <button id="micbtn" class="core-btn">ULLI</button>
+      </div>
+      <div id="visualizer" class="visualizer">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <p id="statustext" class="status-text">Tap ULLI to Speak | Zero-Key Mode Ready</p>
+    </section>
+
+    <main id="chatlog" class="chat-log">
+      <p class="sysmsg">(SYSTEM): WIKI HYPE Ultra Core initialized. Created by Najeeb Ahmad.</p>
+    </main>
+
+    <footer class="input-bar">
+      <input id="textinput" type="text" placeholder="Ask anything, 'Sing a Phonk song', 'Play Believer on YouTube'..." autocomplete="off" />
+      <button id="sendbtn">SEND</button>
+    </footer>
+  </div>
+
+  <!-- Optional API Key Modal -->
+  <div id="apimodal" class="modal hidden">
+    <div class="modal-card">
+      <h2>Optional Groq API Key</h2>
+      <p>Zero-Key Mode is already active! Add your own key only if you want dedicated quota.</p>
+      <input id="apikeyinput" type="password" placeholder="gsk_..." />
+      <div class="modal-actions">
+        <button id="savekeybtn" class="primary-btn">Save Key</button>
+        <button id="closemodalbtn" class="secondary-btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Memory & Contacts Modal -->
+  <div id="memmodal" class="modal hidden">
+    <div class="modal-card">
+      <h2>Neural Memory & Contacts</h2>
+      <p>Say "Remember [note]" or "Save contact Rahul +919876543210"</p>
+      <ul id="memlist" class="mem-list"></ul>
+      <div class="modal-actions">
+        <button id="clearmembtn" class="danger-btn">Wipe All</button>
+        <button id="closemembtn" class="secondary-btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
